@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <p>start</p>
+  <script src='/socket.io/socket.io.js'></script>
+  <script>
+    var socket = io.connect(window.location.href)
+    socket.on('data', function(data){
+      var p = document.createElement('p')
+      p.innerHTML = data
+      document.body.appendChild(p)
+    })
+  </script>
+</body>
+</html>
